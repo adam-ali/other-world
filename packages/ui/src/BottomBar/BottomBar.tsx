@@ -1,4 +1,6 @@
 import { PropsWithChildren } from 'react';
+import { HugeiconsIcon } from '@hugeicons/react';
+import { Notebook02Icon, RightToLeftListBulletIcon } from '@hugeicons/core-free-icons';
 import './bottomBar.css';
 export function BottomBar({ children, ...other }: PropsWithChildren) {
   return (
@@ -8,18 +10,15 @@ export function BottomBar({ children, ...other }: PropsWithChildren) {
       <div className="liquidGlass-shine"></div>
       <div className="liquidGlass-text">
         <div className="dock">
-          <img
-            src="https://raw.githubusercontent.com/lucasromerodb/liquid-glass-effect-macos/refs/heads/main/assets/finder.png"
-            alt="Finder"
-          />
-          <img
-            src="https://raw.githubusercontent.com/lucasromerodb/liquid-glass-effect-macos/refs/heads/main/assets/map.png"
-            alt="Finder"
-          />
-          <img
-            src="https://raw.githubusercontent.com/lucasromerodb/liquid-glass-effect-macos/refs/heads/main/assets/messages.png"
-            alt="Finder"
-          />
+          <button className="glass-icon-button">
+            <HugeiconsIcon icon={RightToLeftListBulletIcon} />
+            <p>Todos</p>
+          </button>
+          <button className="glass-icon-button">
+            <HugeiconsIcon icon={Notebook02Icon} />
+            <p>Notes</p>
+          </button>
+
           <img
             src="https://raw.githubusercontent.com/lucasromerodb/liquid-glass-effect-macos/refs/heads/main/assets/notes.png"
             alt="Finder"

@@ -1,3 +1,4 @@
+import { Card } from '@other-world/ui';
 import { createFileRoute } from '@tanstack/react-router';
 
 export const Route = createFileRoute('/')({
@@ -7,6 +8,7 @@ export const Route = createFileRoute('/')({
 function App() {
   return (
     <div className="App">
+      <Card title={'Title'} content={'conetcjghskjhsj'} />
       <header className="App-header">TODOS</header>
     </div>
   );

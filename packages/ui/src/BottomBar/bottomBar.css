@@ -61,23 +61,86 @@
   z-index: 1;
   position: absolute;
   inset: 0;
-  background: rgba(255, 255, 255, 0.25);
+  /* background: rgba(255, 255, 255, 0.01); */
 }
 
 .liquidGlass-shine {
   position: absolute;
   inset: 0;
   z-index: 2;
-
   overflow: hidden;
 
   box-shadow:
-    inset 2px 2px 1px 0 rgba(255, 255, 255, 0.5),
-    inset -1px -1px 1px 1px rgba(255, 255, 255, 0.5);
+    inset 2px 2px 1px 0 rgba(255, 255, 255, 0.3),
+    inset -1px -1px 1px 1px rgba(255, 255, 255, 0.3);
 }
 
 .liquidGlass-text {
   z-index: 3;
   font-size: 2rem;
   color: black;
+}
+
+/*  */
+
+.glass-icon-button {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.8rem 0.8rem;
+  border-radius: 1.5rem;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  position: relative;
+  user-select: none;
+
+  /* Glass effect */
+  background: rgba(255, 255, 255, 0);
+  backdrop-filter: blur(3px) saturate(110%);
+  -webkit-backdrop-filter: blur(2px) saturate(110%); /* For Safari */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle white border */
+  box-shadow: 0 6px 24px 0 rgba(0, 0, 0, 0.25); /* Soft shadow for depth */
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smooth transitions */
+  color: #ffffff; /* White text and icon color */
+  font-size: 1.125rem; /* Base font size for text */
+  font-weight: 500;
+}
+
+.glass-icon-button .icon {
+  font-size: 2.5rem;
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.glass-icon-button p {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* Hover effect */
+.glass-icon-button:hover {
+  background: rgba(255, 255, 255, 0.1); /* Slightly more opaque on hover */
+  box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.35); /* Deeper shadow on hover */
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+
+  transform: scale(0.95);
+  transform-origin: center center;
+}
+
+/* Active state for click feedback */
+.glass-icon-button:active {
+  transform: translateY(0); /* Press down */
+  box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.2); /* Smaller shadow */
+  background: rgba(255, 255, 255, 0.15); /* Less opaque */
+  text-shadow: none; /* Remove glow on active */
+}
+
+/* Focus state for accessibility */
+.glass-icon-button:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.6);
+  outline-offset: 2px;
 }

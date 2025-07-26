@@ -10,6 +10,8 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
+  background: url('./trees.png');
+  background-repeat: round;
   /* background: url('https://raw.githubusercontent.com/lucasromerodb/liquid-glass-effect-macos/refs/heads/main/assets/flowers.jpg'); */
 }
 
