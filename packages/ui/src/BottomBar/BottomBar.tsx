@@ -1,36 +1,39 @@
-import { PropsWithChildren } from 'react';
-import { HugeiconsIcon } from '@hugeicons/react';
-import { Notebook02Icon, RightToLeftListBulletIcon } from '@hugeicons/core-free-icons';
+import { PropsWithChildren, ReactNode } from 'react';
 import './bottomBar.css';
-export function BottomBar({ children, ...other }: PropsWithChildren) {
+
+interface BottomBarProps extends PropsWithChildren {}
+
+interface BottomBarItemProps {
+  icon: ReactNode;
+  label: string;
+  isActive: boolean;
+  onClick: () => void;
+}
+
+export const BottomBarItem = ({ icon, label, isActive, onClick }: BottomBarItemProps) => {
+  const buttonClassName = `glass-icon-button ${isActive ? 'glass-icon-button__active' : ''}`;
+
+  return (
+    <>
+      <button className={buttonClassName} onClick={onClick} aria-label={label}>
+        {icon}
+        <p>{label}</p>
+      </button>
+    </>
+  );
+};
+export function BottomBar({ children }: BottomBarProps) {
   return (
     <div className="liquidGlass-wrapper dock">
       <div className="liquidGlass-effect"></div>
       <div className="liquidGlass-tint"></div>
       <div className="liquidGlass-shine"></div>
       <div className="liquidGlass-text">
-        <div className="dock">
-          <button className="glass-icon-button">
-            <HugeiconsIcon icon={RightToLeftListBulletIcon} />
-            <p>Todos</p>
-          </button>
-          <button className="glass-icon-button">
-            <HugeiconsIcon icon={Notebook02Icon} />
-            <p>Notes</p>
-          </button>
-
-          <img
-            src="https://raw.githubusercontent.com/lucasromerodb/liquid-glass-effect-macos/refs/heads/main/assets/notes.png"
-            alt="Finder"
-          />
-          <img
-            src="https://raw.githubusercontent.com/lucasromerodb/liquid-glass-effect-macos/refs/heads/main/assets/safari.png"
-            alt="Finder"
-          />
-        </div>
+        <div className="dock">{children}</div>
       </div>
     </div>
   );
 }
 
+BottomBar.Item = BottomBarItem;
 BottomBar.displayName = 'BottomBar';

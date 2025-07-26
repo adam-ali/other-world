@@ -109,6 +109,10 @@
   font-weight: 500;
 }
 
+.glass-icon-button__active {
+  background: rgba(250, 255, 255, 0.3);
+}
+
 .glass-icon-button .icon {
   font-size: 2.5rem;
   line-height: 1;

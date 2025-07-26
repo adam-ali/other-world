@@ -1,12 +1,49 @@
-import type { PropsWithChildren } from 'react';
-import { BottomBar, Button } from '@other-world/ui';
+import type { PropsWithChildren, ReactNode } from 'react';
+import { BottomBar } from '@other-world/ui';
+import { HugeiconsIcon } from '@hugeicons/react';
+import { Notebook02Icon, RightToLeftListBulletIcon } from '@hugeicons/core-free-icons';
+import './withBottomBar.css';
+import { useNavigate, useRouterState } from '@tanstack/react-router';
+
+interface BottomBarItemConfig {
+  path: string;
+  icon: ReactNode;
+  label: string;
+}
+
 export default function WithBottomBar({ children }: PropsWithChildren) {
+  const navigate = useNavigate();
+  const router = useRouterState();
+
+  const navItems: BottomBarItemConfig[] = [
+    {
+      path: '/',
+      label: 'Todo',
+      icon: <HugeiconsIcon icon={RightToLeftListBulletIcon} />,
+    },
+    { path: '/notes', label: 'Notes', icon: <HugeiconsIcon icon={Notebook02Icon} /> },
+  ];
+
+  const onItemClick = (itemId: string) => {
+    navigate({ to: `/${itemId}` });
+  };
+
   return (
-    <div>
-      {children}
-      <p>Bottom Bar</p>
-      <Button>my Button</Button>
-      <BottomBar />
+    <div className="layout">
+      <main className="main-content">{children}</main>
+      <footer className="footer">
+        <BottomBar>
+          {navItems.map((item) => (
+            <BottomBar.Item
+              key={item.label}
+              icon={item.icon}
+              label={item.label}
+              isActive={item.path === router.location.pathname}
+              onClick={() => onItemClick(item.path)}
+            />
+          ))}
+        </BottomBar>
+      </footer>
     </div>
   );
 }

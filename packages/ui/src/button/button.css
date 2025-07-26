@@ -1,50 +1,22 @@
-.glass-card {
-  width: 240px;
-  height: 360px;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow:
-    0 8px 32px rgba(0, 0, 0, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.5),
-    inset 0 -1px 0 rgba(255, 255, 255, 0.1),
-    inset 0 0 0px 0px rgba(255, 255, 255, 0);
-  position: relative;
-  overflow: hidden;
+.glass-button {
+  all: unset;
 }
 
-.glass-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.container--inline {
+  flex-direction: row;
 }
 
-.glass-card::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 1px;
-  height: 100%;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.8),
-    transparent,
-    rgba(255, 255, 255, 0.3)
-  );
-}
-/* Card2 */
 .glass-container {
   position: relative;
   display: flex;
   font-weight: 600;
-  color: var(--lg-text);
+  color: white;
   cursor: pointer;
   background: transparent;
   border-radius: 1rem;
@@ -55,10 +27,16 @@
     0 6px 6px rgba(0, 0, 0, 0.2),
     0 0 20px rgba(0, 0, 0, 0.1);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 2.2);
+  /* padding: 1em; */
+}
+.glass-container:hover {
+  transform: scale(0.95);
+  transform-origin: center center;
 }
 
-.glass-container--large {
-  min-width: 32rem;
+.glass-container:active {
+  transform: translateY(0); /* Press down */
+  text-shadow: none;
 }
 
 .glass-filter {
@@ -99,6 +77,8 @@
 
 .glass-content--inline {
   padding: 0.25rem 2rem 0.25rem 0.75rem;
+  padding: 1rem;
+  margin: 0.7rem;
   flex: 1 1 auto;
   justify-content: space-between;
 }

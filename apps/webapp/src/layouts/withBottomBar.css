@@ -1,0 +1,32 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  padding: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 0.5rem;
+    display: block;
+    justify-content: space-between; /* Better for mobile layout */
+    flex-wrap: wrap; /* Allow items to wrap if needed */
+    text-align: center;
+  }
+}

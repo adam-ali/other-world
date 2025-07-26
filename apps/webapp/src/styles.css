@@ -6,9 +6,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   animation: moveBackground 60s linear infinite;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
   height: 100vh;
   background: url('./trees.png');
   background-repeat: round;
