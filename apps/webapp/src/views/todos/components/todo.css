@@ -1,5 +1,13 @@
 .todo-form {
   display: flex;
-  gap: 1rem; /* or 2px, 0.5em, etc. */
-  padding: 20px;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+@media (max-width: 768px) {
+  .todo-form {
+    display: flex;
+    flex-direction: column;
+  }
 }

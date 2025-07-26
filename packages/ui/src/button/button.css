@@ -1,7 +1,7 @@
 :root {
   --lg-bg-color: rgba(255, 255, 255, 0.05);
   --lg-highlight: rgba(255, 255, 255, 0.25);
-  --lg-text: #000000;
+  --lg-text: #ffffff;
   --lg-hover-glow: rgba(255, 255, 255, 0.2);
   --lg-red: #fb4268;
   --lg-grey: #5b5b5b;
@@ -9,6 +9,8 @@
 
 .glass-button {
   all: unset;
+  /* border: none; */
+  /* background-color: transparent; */
 }
 
 .container {
@@ -25,13 +27,12 @@
   position: relative;
   display: flex;
   font-weight: 600;
-  -webkit-text-stroke: 0.2px white;
-  text-stroke: 0.2px white;
+  -webkit-text-stroke: 0.2px rgb(57, 57, 57);
+  text-stroke: 0.2px rgb(57, 55, 55);
   cursor: pointer;
   background: transparent;
-  border-radius: 1rem;
+  border-radius: 0.1rem;
   border: 1px solid rgba(255, 255, 255, 0.3);
-
   overflow: hidden;
   box-shadow:
     0 6px 6px rgba(0, 0, 0, 0.2),
@@ -93,6 +94,8 @@
   /* padding: 0.4rem; */
   /* margin: 0.4rem; */
   flex: 1 1 auto;
+  /* border-radius: 1px; */
+  margin: 0.4rem;
   justify-content: space-between;
 }
 /* GLASSBTN 2 */
