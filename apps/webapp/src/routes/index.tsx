@@ -1,3 +1,6 @@
+import { TodoFilter } from '@/views/todos/components/TodoFilter';
+import { TodoForm } from '@/views/todos/components/TodoForm';
+import { TodoList } from '@/views/todos/components/TodoList';
 import { Card, Card2, GlassButton } from '@other-world/ui';
 import { createFileRoute } from '@tanstack/react-router';
 
@@ -8,7 +11,13 @@ export const Route = createFileRoute('/')({
 function App() {
   return (
     <div className="App">
-      <Card title={'Title'} content={'conetcjghskjhsj'} />
+      <Card title={'Title'}>
+        <div>
+          <TodoForm />
+          <TodoFilter />
+          <TodoList />
+        </div>
+      </Card>
 
       {/* <Card2>
         <h2>Todo:</h2>
@@ -16,9 +25,7 @@ function App() {
       </Card2> */}
       <br />
 
-      <GlassButton>Add todo</GlassButton>
-
-      <header className="App-header">TODOS</header>
+      <GlassButton>Add </GlassButton>
     </div>
   );
 }

@@ -4,20 +4,10 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
   children: React.ReactNode;
 }
 
-export function Button({ children, ...other }: ButtonProps) {
-  return (
-    <button type="button" {...other}>
-      {children}
-    </button>
-  );
-}
-
-Button.displayName = 'Button';
-
-export function GlassButton({ children }: PropsWithChildren) {
+export function GlassButton({ children, ...other }: ButtonProps) {
   return (
     <>
-      <button type="button" className="glass-button">
+      <button type="button" {...other} className="glass-button">
         <div className="container container--inline">
           <div className="glass-container glass-container--rounded">
             <div className="glass-filter"></div>
@@ -55,6 +45,30 @@ export function GlassButton({ children }: PropsWithChildren) {
           </div>
         </div>
       </button>
+    </>
+  );
+}
+
+export function GlassButton2({ children, ...other }: ButtonProps) {
+  return (
+    <>
+      <button className="glass-button2" {...other}>
+        <div className="glass-filter"></div>
+        <div className="glass-overlay"></div>
+        <div className="glass-specular"></div>
+        <div className="glass-content">{children}</div>
+      </button>
+      <svg style={{ display: 'none' }}>
+        <filter id="glass-distortion">
+          <feTurbulence
+            type="turbulence"
+            baseFrequency="0.008"
+            numOctaves="2"
+            result="noise"
+          />
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="77" />
+        </filter>
+      </svg>
     </>
   );
 }

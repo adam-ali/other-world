@@ -1,0 +1,33 @@
+.glass-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 400px;
+}
+
+.glass-label {
+  font-weight: 500;
+  color: white;
+}
+
+.glass-input {
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: white;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+.glass-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.glass-input:focus {
+  border-color: rgba(255, 255, 255, 0.6);
+}

@@ -1,3 +1,12 @@
+:root {
+  --lg-bg-color: rgba(255, 255, 255, 0.05);
+  --lg-highlight: rgba(255, 255, 255, 0.25);
+  --lg-text: #000000;
+  --lg-hover-glow: rgba(255, 255, 255, 0.2);
+  --lg-red: #fb4268;
+  --lg-grey: #5b5b5b;
+}
+
 .glass-button {
   all: unset;
 }
@@ -16,7 +25,8 @@
   position: relative;
   display: flex;
   font-weight: 600;
-  color: white;
+  -webkit-text-stroke: 0.2px white;
+  text-stroke: 0.2px white;
   cursor: pointer;
   background: transparent;
   border-radius: 1rem;
@@ -26,16 +36,19 @@
   box-shadow:
     0 6px 6px rgba(0, 0, 0, 0.2),
     0 0 20px rgba(0, 0, 0, 0.1);
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 2.2);
-  /* padding: 1em; */
+  transition: all 0.4s ease;
 }
+
 .glass-container:hover {
-  transform: scale(0.95);
-  transform-origin: center center;
+  transform: scale(0.97);
+  background: rgba(255, 255, 255, 0.1);
+
+  /* transform-origin: center center; */
 }
 
 .glass-container:active {
-  transform: translateY(0); /* Press down */
+  /* transform: translateY(0); */
+  background: rgba(255, 255, 255, 0.2);
   text-shadow: none;
 }
 
@@ -76,9 +89,10 @@
 }
 
 .glass-content--inline {
-  padding: 0.25rem 2rem 0.25rem 0.75rem;
-  padding: 1rem;
-  margin: 0.7rem;
+  /* padding: 0.25rem 2rem 0.25rem 0.75rem; */
+  /* padding: 0.4rem; */
+  /* margin: 0.4rem; */
   flex: 1 1 auto;
   justify-content: space-between;
 }
+/* GLASSBTN 2 */

@@ -1,11 +1,11 @@
 import { PropsWithChildren } from 'react';
 import './card.css';
 
-export function Card({ title, content }: any) {
+export function Card({ title, children }: any) {
   return (
     <div style={styles.card} className="glass-card">
       <h2 style={styles.title}>{title}</h2>
-      <p style={styles.content}>{content}</p>
+      <p style={styles.content}>{children}</p>
     </div>
   );
 }
@@ -14,7 +14,6 @@ const styles: { [key: string]: React.CSSProperties } = {
   card: {
     borderRadius: '8px',
     padding: '16px',
-    maxWidth: '300px',
   },
   title: {
     margin: '0 0 8px',

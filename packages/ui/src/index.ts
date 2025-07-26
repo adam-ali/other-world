@@ -1,3 +1,4 @@
-export { Button, GlassButton } from './button/button';
-export { BottomBar } from './BottomBar';
-export { Card, Card2 } from './card';
+export * from './button/button';
+export * from './BottomBar';
+export * from './card';
+export * from './input/input';

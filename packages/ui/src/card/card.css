@@ -1,5 +1,5 @@
 .glass-card {
-  width: 240px;
+  /* width: 240px; */
   height: 360px;
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(5px);
@@ -58,7 +58,7 @@
 }
 
 .glass-container--large {
-  min-width: 32rem;
+  /* min-width: 32rem; */
 }
 
 .glass-filter {
