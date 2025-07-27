@@ -24,7 +24,7 @@ export function GlassButton({ children, ...other }: ButtonProps) {
             <div className="glass-specular"></div>
 
             <svg style={{ display: 'none' }}>
-              <filter id="lg-dist" x="0%" y="0%" width="100%" height="100%">
+              {/* <filter id="lg-dist" x="0%" y="0%" width="100%" height="100%">
                 <feTurbulence
                   type="fractalNoise"
                   baseFrequency="0.008 0.008"
@@ -40,8 +40,8 @@ export function GlassButton({ children, ...other }: ButtonProps) {
                   xChannelSelector="R"
                   yChannelSelector="G"
                 />
-              </filter>
-              {/* <filter id="glass-distortion">
+              </filter> */}
+              <filter id="glass-distortion">
                 <feTurbulence
                   type="turbulence"
                   baseFrequency="0.008"
@@ -55,7 +55,7 @@ export function GlassButton({ children, ...other }: ButtonProps) {
                   xChannelSelector="R"
                   yChannelSelector="G"
                 />
-              </filter> */}
+              </filter>
             </svg> 
           </div>
         </div>
